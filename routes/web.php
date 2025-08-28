@@ -12,6 +12,14 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/devices', [DeviceController::class, 'index']);
 
-Auth::routes();
+Auth::routes([
+    'register'=>false,
+    'reset'=>false,
+    'verify'=>false,
+]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
+
