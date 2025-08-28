@@ -23,15 +23,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-<<<<<<< HEAD
-        return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-=======
-   return [
+       return [
             'full_name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'username' => $this->faker->unique()->userName(),
@@ -39,7 +31,6 @@ class UserFactory extends Factory
             'roles' => $this->faker->randomElement(['admin', 'user', 'manager']),
             'created_at' => now(),
             'updated_at' => now(),
->>>>>>> de3ed8a (first commit)
         ];
     }
 

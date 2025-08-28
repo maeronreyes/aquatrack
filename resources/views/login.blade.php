@@ -24,14 +24,25 @@
                   <img src="/images/LOGO.png" width="220" height="120" alt="">
                 </a>
                 <p class="text-center">User Login</p>
-                <form>
+                                   <form method="POST" action="{{ route('login') }}">
+                        @csrf
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                       @error('username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                   </div>
                   <div class="mb-4">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                   </div>
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     {{-- <div class="form-check">
@@ -42,7 +53,7 @@
                     </div> --}}
                     {{-- <a class="text-primary fw-bold" href="/vendor/flexy/index.html">Forgot Password ?</a> --}}
                   </div>
-                  <a href="/vendor/flexy/index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Login</a>
+                  <a href="/vendor/flexy/index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">   {{ __('Login') }}</a>
                   <div class="d-flex align-items-center justify-content-center">
                     {{-- <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p> --}}
                     {{-- <a class="text-primary fw-bold ms-2" href="/vendor/flexy/authentication-register.html">Create an account</a> --}}
