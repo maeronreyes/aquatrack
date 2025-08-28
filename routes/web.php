@@ -11,3 +11,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/devices', [DeviceController::class, 'index']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
