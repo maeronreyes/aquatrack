@@ -13,14 +13,14 @@ return new class extends Migration
     {
         //
         Schema::create('tbl_consumption_reports', function (Blueprint $table) {
-            $table->id('report_id');
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->enum('period_type', ['daily', 'weekly', 'monthly']);
             $table->date('period_start');
             $table->date('period_end');
             $table->decimal('total_consumption', 12, 2);
             $table->decimal('avg_daily_consumption', 12, 2)->nullable();
-            $table->foreign('user_id')->references('user_id')->on('tbl_users')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('tbl_users')->onDelete('cascade');
             $table->timestamps();
         });
     }

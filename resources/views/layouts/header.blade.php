@@ -45,7 +45,15 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="/vendor/flexy/authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                               <a class="btn btn-outline-primary mx-3 mt-2 d-block" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                    {{-- <a href="/vendor/flexy/authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a> --}}
                   </div>
                 </div>
               </li>

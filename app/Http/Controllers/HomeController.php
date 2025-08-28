@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+     
+         $page = [
+            'name'      =>  'Dashboard',
+            'title'     =>  'Dashboard',
+            'crumb'     =>  array()
+        ];
+
+        return view('welcome', compact('page'));
     }
 }

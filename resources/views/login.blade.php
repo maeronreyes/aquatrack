@@ -7,6 +7,9 @@
   <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
   <link rel="shortcut icon" type="image/png" href="/vendor/flexy/assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="/vendor/flexy/assets/css/styles.min.css" />
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+          <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -53,7 +56,10 @@
                     </div> --}}
                     {{-- <a class="text-primary fw-bold" href="/vendor/flexy/index.html">Forgot Password ?</a> --}}
                   </div>
-                  <a href="/vendor/flexy/index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">   {{ __('Login') }}</a>
+                       <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+                  {{-- <a href="/vendor/flexy/index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">   {{ __('Login') }}</a> --}}
                   <div class="d-flex align-items-center justify-content-center">
                     {{-- <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p> --}}
                     {{-- <a class="text-primary fw-bold ms-2" href="/vendor/flexy/authentication-register.html">Create an account</a> --}}

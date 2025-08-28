@@ -13,14 +13,14 @@ return new class extends Migration
     {
         //
         Schema::create('tbl_devices', function (Blueprint $table) {
-            $table->id('device_id');
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('device_name', 100);
             $table->string('serial_number', 100)->unique();
             $table->string('location_description', 255)->nullable();
             $table->date('install_date');
             $table->enum('status', ['active', 'inactive', 'maintenance'])->default('active');
-            $table->foreign('user_id')->references('user_id')->on('tbl_users')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('tbl_users')->onDelete('cascade');
             $table->timestamps();
         });
     }

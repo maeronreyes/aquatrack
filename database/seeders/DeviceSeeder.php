@@ -14,19 +14,16 @@ class DeviceSeeder extends Seeder
      */
     public function run(): void
     {
-   
- $userId = 1; // or pick dynamically
+       $user = User::first(); // or User::find($id);
 
-        foreach (range(1, 50) as $i) {
-            Device::create([
-                'user_id' => $userId,
-                'device_name' => "Device {$i}",
-                'serial_number' => "SN-" . str_pad($i, 5, "0", STR_PAD_LEFT),
-                'location_description' => "Location {$i}",
-                'install_date' => now()->subDays(rand(1, 60)),
-                'status' => collect(['active', 'inactive', 'maintenance'])->random(),
-            ]);
-        }
+$user->devices()->create([
+    'device_name' => 'Device 1',
+    'serial_number' => 'SN-00001',
+    'location_description' => 'Location 1',
+    'install_date' => "2025-01-01",
+    'status' => 'maintenance',
+]);
+    
 
     }
 }

@@ -8,4 +8,12 @@ class Device extends Model
 {
     //
     protected $table = 'tbl_devices';
+        protected $fillable = [
+        'user_id',
+        'device_name',
+        'serial_number',
+        'location_description',
+        'install_date',
+        'status',
+    ];
 }
