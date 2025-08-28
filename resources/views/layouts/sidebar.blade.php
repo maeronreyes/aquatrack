@@ -35,19 +35,18 @@
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link justify-content-between"  
-                href="#" aria-expanded="false">
+                href="/devices" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                   <span class="d-flex">
                     <i class="ti ti-accessible"></i>
                   </span>
                   <span class="hide-menu">Devices</span>
                 </div>
-                
               </a>
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link justify-content-between"  
-                href="#"
+                href="/usage_limit"
                 aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                   <span class="d-flex">
@@ -60,7 +59,7 @@
             </li>
             <li class="sidebar-item">
               <a class="sidebar-link justify-content-between"  
-                href="#" aria-expanded="false">
+                href="/logs" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                   <span class="d-flex">
                     <i class="ti ti-brand-google-photos"></i>

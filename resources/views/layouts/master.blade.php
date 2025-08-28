@@ -46,7 +46,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="/vendor/flexy/index.html" class="text-nowrap logo-img">
-            <img src="/vendor/flexy/assets/images/logos/logo.svg" alt="" />
+            <img src="/images/LOGO.png" width="220" height="100" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-6"></i>
@@ -65,7 +65,6 @@
     @include('layouts.header')
       <!--  Header End -->
       <!--  Body Start -->
-     
       <div class="body-wrapper-inner">
         <div class="container-fluid">
           <!--  Row 1 -->
