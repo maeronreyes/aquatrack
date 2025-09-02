@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
         Schema::create('tbl_consumption_reports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
@@ -20,7 +19,7 @@ return new class extends Migration
             $table->date('period_end');
             $table->decimal('total_consumption', 12, 2);
             $table->decimal('avg_daily_consumption', 12, 2)->nullable();
-            $table->foreign('id')->references('id')->on('tbl_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('tbl_users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,7 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
         Schema::dropIfExists('tbl_consumption_reports');
     }
 };

@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
         Schema::create('tbl_usage_limits', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->enum('period_type', ['daily', 'weekly', 'monthly']);
             $table->decimal('max_consumption', 12, 2);
-            $table->timestamp('created_at')->useCurrent(); // 👈 keep only this
-            $table->foreign('id')->references('id')->on('tbl_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('tbl_users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

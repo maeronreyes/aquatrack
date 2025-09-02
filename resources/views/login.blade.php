@@ -1,81 +1,179 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="/vendor/sneat/assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
-  <link rel="shortcut icon" type="image/png" href="/vendor/flexy/assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="/vendor/flexy/assets/css/styles.min.css" />
-      <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/vendor/sneat/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/vendor/sneat/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/css/pages/page-auth.css" />
+    <!-- Helpers -->
+    <script src="/vendor/sneat/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/vendor/sneat/assets/js/config.js"></script>
+     <meta name="csrf-token" content="{{ csrf_token() }}">
           <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
+  </head>
 
-<body>
-  <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
-    <div
-      class="position-relative overflow-hidden text-bg-light min-vh-100 d-flex align-items-center justify-content-center">
-      <div class="d-flex align-items-center justify-content-center w-100">
-        <div class="row justify-content-center w-100">
-          <div class="col-md-8 col-lg-6 col-xxl-3">
-            <div class="card mb-0">
-              <div class="card-body">
-                <a href="/vendor/flexy/index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="/images/LOGO.png" width="220" height="120" alt="">
+  <body>
+    <!-- Content -->
+
+    <div class="container-xxl">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+          <!-- Register -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Logo -->
+              <div class="app-brand justify-content-center">
+                <a href="index.html" class="app-brand-link gap-2">
+                  <span class="app-brand-logo demo">
+                           <img src="/images/LOGO.png" width="220" height="120" alt="">
+                  </span>
+                  {{-- <span class="app-brand-text demo text-body fw-bolder">Sneat</span> --}}
                 </a>
-                <p class="text-center">User Login</p>
-                  <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                       @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                  </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1">
-                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between mb-4">
-                    {{-- <div class="form-check">
-                      <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
-                      <label class="form-check-label text-dark" for="flexCheckChecked">
-                        Remeber this Device
-                      </label>
-                    </div> --}}
-                    {{-- <a class="text-primary fw-bold" href="/vendor/flexy/index.html">Forgot Password ?</a> --}}
-                  </div>
-                       <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-                  {{-- <a href="/vendor/flexy/index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">   {{ __('Login') }}</a> --}}
-                  <div class="d-flex align-items-center justify-content-center">
-                    {{-- <p class="fs-4 mb-0 fw-bold">New to MaterialM?</p> --}}
-                    {{-- <a class="text-primary fw-bold ms-2" href="/vendor/flexy/authentication-register.html">Create an account</a> --}}
-                  </div>
-                </form>
               </div>
+              <!-- /Logo -->
+              <h4 class="mb-2">Welcome to Aqua Track! 👋</h4>
+              <p class="mb-4">Please sign-in to your account</p>
+
+           <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email or Username</label>
+                  <input
+                    type="text"
+                    class="form-control @error('username') is-invalid @enderror"
+                    id="email"
+                    name="username"
+                    placeholder="Enter your username"
+                    autofocus
+                    
+                  />
+                  @error('username')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+                <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="password">Password</label>
+                    {{-- <a href="auth-forgot-password-basic.html">
+                      <small>Forgot Password?</small>
+                    </a> --}}
+                  </div>
+                  <div class="input-group input-group-merge">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control @error('password') is-invalid @enderror"
+                      name="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      aria-describedby="password"
+                    />
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember-me" />
+                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button class="btn btn-primary d-grid w-100" type="submit">
+                    {{ __('Login') }}
+                  </button>
+                </div>
+              </form>
+
+              <p class="text-center">
+                <span>New on our platform?</span>
+                <a href="auth-register-basic.html">
+                  <span>Create an account</span>
+                </a>
+              </p>
             </div>
           </div>
+          <!-- /Register -->
         </div>
       </div>
     </div>
-  </div>
-  <script src="/vendor/flexy/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/flexy/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-</body>
 
+    <!-- / Content -->
+
+    <div class="buy-now">
+      <a
+        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now"
+        >Upgrade to Pro</a
+      >
+    </div>
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="/vendor/sneat/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/vendor/sneat/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/vendor/sneat/assets/vendor/js/bootstrap.js"></script>
+    <script src="/vendor/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="/vendor/sneat/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="/vendor/sneat/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>

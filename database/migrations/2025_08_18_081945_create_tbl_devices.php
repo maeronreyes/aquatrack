@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('location_description', 255)->nullable();
             $table->date('install_date');
             $table->enum('status', ['active', 'inactive', 'maintenance'])->default('active');
-            $table->foreign('id')->references('id')->on('tbl_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('tbl_users')->onDelete('cascade');
             $table->timestamps();
         });
     }

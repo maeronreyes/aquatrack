@@ -1,63 +1,105 @@
-      <header class="app-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <ul class="navbar-nav">
-            <li class="nav-item d-block d-xl-none">
-              <a class="nav-link sidebartoggler " id="headerCollapse" href="javascript:void(0)">
-                <i class="ti ti-menu-2"></i>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="javascript:void(0)" id="drop1" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="ti ti-bell"></i>
-                <div class="notification bg-primary rounded-circle"></div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-animate-up" aria-labelledby="drop1">
-                <div class="message-body">
-                  <a href="javascript:void(0)" class="dropdown-item">
-                    Item 1
-                  </a>
-                  <a href="javascript:void(0)" class="dropdown-item">
-                    Item 2
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-               
-              <li class="nav-item dropdown">
-                <a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="/vendor/flexy/assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
-                </a>
-                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                  <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-user fs-6"></i>
-                      <p class="mb-0 fs-3">My Profile</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
-                    </a>
-                               <a class="btn btn-outline-primary mx-3 mt-2 d-block" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                    {{-- <a href="/vendor/flexy/authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a> --}}
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+<nav
+class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+
+id="layout-navbar"
+>
+<div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+<a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+<i class="bx bx-menu bx-sm"></i>
+</a>
+</div>
+
+<div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+<!-- Search -->
+<div class="navbar-nav align-items-center">
+<div class="nav-item d-flex align-items-center">
+<i class="bx bx-search fs-4 lh-0"></i>
+<input
+type="text"
+class="form-control border-0 shadow-none"
+placeholder="Search..."
+aria-label="Search..."
+/>
+</div>
+</div>
+<!-- /Search -->
+
+<ul class="navbar-nav flex-row align-items-center ms-auto">
+<!-- Place this tag where you want the button to render. -->
+<li class="nav-item lh-1 me-3">
+{{-- <a
+class="github-button"
+href="https://github.com/themeselection/sneat-html-admin-template-free"
+data-icon="octicon-star"
+data-size="large"
+data-show-count="true"
+aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+>Star</a
+> --}}
+</li>
+
+<!-- User -->
+<li class="nav-item navbar-dropdown dropdown-user dropdown">
+<a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+<div class="avatar avatar-online">
+<img src="/vendor/sneat/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+</div>
+</a>
+<ul class="dropdown-menu dropdown-menu-end">
+<li>
+<a class="dropdown-item" href="#">
+<div class="d-flex">
+<div class="flex-shrink-0 me-3">
+<div class="avatar avatar-online">
+<img src="/vendor/sneat/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+</div>
+</div>
+<div class="flex-grow-1">
+<span class="fw-semibold d-block">{{ Auth::user()->full_name }}</span>
+<small class="text-muted">{{ Auth::user()->username }}</small>
+</div>
+</div>
+</a>
+</li>
+<li>
+<div class="dropdown-divider"></div>
+</li>
+{{-- <li>
+<a class="dropdown-item" href="#">
+<i class="bx bx-user me-2"></i>
+<span class="align-middle">My Profile</span>
+</a>
+</li> --}}
+{{-- <li>
+<a class="dropdown-item" href="#">
+<i class="bx bx-cog me-2"></i>
+<span class="align-middle">Settings</span>
+</a>
+</li> --}}
+{{-- <li>
+<a class="dropdown-item" href="#">
+<span class="d-flex align-items-center align-middle">
+<i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+<span class="flex-grow-1 align-middle">Billing</span>
+<span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+</span>
+</a>
+</li> --}}
+<li>
+<div class="dropdown-divider"></div>
+</li>
+<li>
+  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <i class="ti ti-logout me-2 ti-sm"></i>
+            <span class="align-middle">{{ __('Logout') }}</span>
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+</li>
+</ul>
+</li>
+<!--/ User -->
+</ul>
+</div>
+</nav>

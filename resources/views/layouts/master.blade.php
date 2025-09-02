@@ -1,94 +1,124 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="/vendor/sneat/assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
-  <link rel="shortcut icon" type="image/png" href="/vendor/flexy/assets/images/logos/favicon.png" />
-  <link rel="stylesheet" href="/vendor/flexy/assets/css/styles.min.css" />
-</head>
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
-<body>
-  <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
+    <meta name="description" content="" />
 
-    <!--  App Topstrip Header -->
-    <div class="app-topstrip bg-dark py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
-        <a class="d-flex justify-content-center" href="#">
-          <img src="assets/images/logos/logo-wrappixel.svg" alt="" width="150">
-        </a>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/vendor/sneat/assets/img/favicon/favicon.ico" />
 
-        
-      </div>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-      <div class="d-lg-flex align-items-center gap-2">
-        {{-- <h3 class="text-white mb-2 mb-lg-0 fs-5 text-center">Check Flexy Premium Version</h3> --}}
-        <div class="d-flex align-items-center justify-content-center gap-2">
-          
-          <div class="dropdown d-flex">
-            <a class="btn btn-primary d-flex align-items-center gap-1 " href="javascript:void(0)" id="drop4"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="ti ti-shopping-cart fs-5"></i>
-              Buy Now
-              <i class="ti ti-chevron-down fs-5"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/fonts/boxicons.css" />
 
-    </div>
-    <!-- Sidebar Start -->
-    <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
-      <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="/vendor/flexy/index.html" class="text-nowrap logo-img">
-            <img src="/images/LOGO.png" width="220" height="100" alt="" />
-          </a>
-          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-            <i class="ti ti-x fs-6"></i>
-          </div>
-        </div>
-        <!-- Sidebar navigation-->
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/vendor/sneat/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="/vendor/sneat/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="/vendor/sneat/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/vendor/sneat/assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+        <!--SIDEBAR-->
         @include('layouts.sidebar')
-        <!-- End Sidebar navigation -->
-      </div>
-      <!-- End Sidebar scroll-->
-    </aside>
-    <!--  Sidebar End -->
-    <!--  Main wrapper -->
-    <div class="body-wrapper">
-      <!--  Header Start -->
-    @include('layouts.header')
-      <!--  Header End -->
-      <!--  Body Start -->
-      <div class="body-wrapper-inner">
-        <div class="container-fluid">
-          <!--  Row 1 -->
-          <div class="row">
-             <h1>@yield('page_title')</h1>
-            <div class="col-12">
-                @yield('content')
-            </div>
-          </div>
-          <!--FOOTER-->
-            @include('layouts.footer')
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="/vendor/flexy/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/flexy/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/vendor/flexy/assets/js/sidebarmenu.js"></script>
-  <script src="/vendor/flexy/assets/js/app.min.js"></script>
-  <script src="/vendor/flexy/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="/vendor/flexy/assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="/vendor/flexy/assets/js/dashboard.js"></script>
-  <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-</body>
+        <!-- / Menu -->
 
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <!--HEADER-->
+          @include('layouts.header')
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+          <!--CONTENT-->
+           @yield('content')
+
+          </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            @include('layouts.footer')
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <div class="buy-now">
+      {{-- 
+       --}}
+    </div>
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="/vendor/sneat/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/vendor/sneat/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/vendor/sneat/assets/vendor/js/bootstrap.js"></script>
+    <script src="/vendor/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="/vendor/sneat/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="/vendor/sneat/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="/vendor/sneat/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="/vendor/sneat/assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>
